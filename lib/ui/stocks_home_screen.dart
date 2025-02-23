@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_stock_app/repository/service/models/responses/stocks/stocks_response.dart';
 import 'package:flutter_stock_app/states/stocks_state.dart';
+import 'package:flutter_stock_app/widgets/stock_card_widget.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 // Home Screen UI
@@ -55,7 +56,8 @@ class StocksHomeScreen extends HookConsumerWidget {
                     itemCount: data.length,
                     itemBuilder: (context, index) {
                       StocksResponse stock = data[index];
-                      return Padding(padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16), child: Text(stock.name ?? "Stock $index"),);
+                      // return Padding(padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16), child: Text(stock.name ?? "Stock $index"),);
+                      return StockCard(assetType: stock.assetType ?? "asset type",description: stock.description ?? "description", exchange: stock.exchange ?? "exchange", name: stock.name ?? "name" , symbol: stock.symbol ?? "symbol", imageUrl: stock.image?.url, industry: stock.industry, marketCap: stock.marketCap, sector: stock.sector, website: stock.website,);
                   },),
                 );
               }

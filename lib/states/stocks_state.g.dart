@@ -7,7 +7,7 @@ part of 'stocks_state.dart';
 // **************************************************************************
 
 String _$stocksStateNotifierHash() =>
-    r'81be7cde23c23792d42b0f9ba5b640c122776a66';
+    r'90f26950acfe34c52e20c431cb224ae0431bd619';
 
 /// See also [StocksStateNotifier].
 @ProviderFor(StocksStateNotifier)

@@ -2,7 +2,6 @@ import 'package:flutter_stock_app/extensions/build_context_ext.dart';
 import 'package:flutter_stock_app/repository/core/service_utils.dart';
 import 'package:flutter_stock_app/repository/service/models/responses/stocks/stocks_response.dart';
 import 'package:flutter_stock_app/repository/service/repo/stocks_repo/stock_repo_service.dart';
-import 'package:flutter_stock_app/utils/constants.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'stocks_state.g.dart';
