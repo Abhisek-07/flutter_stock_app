@@ -10,10 +10,19 @@ class StocksHomeScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-      final TextEditingController _searchController  = useTextEditingController();
+    final ValueNotifier<String> search = useState("");
       final StockState stocksState = ref.watch(stocksStateNotifierProvider);
       final StocksStateNotifier stocksStateNotifier = ref.watch(stocksStateNotifierProvider.notifier);
+      String? searchText = useDebounced(search.value, Duration(milliseconds: 300)); 
 
+      useEffect(() {
+        WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+          // if(searchText?.isNotEmpty ?? false) {
+            stocksStateNotifier.fetchStocks(searchText ?? "");
+          // }
+        },);
+        return null;
+      }, [searchText]);     
 
     return Scaffold(
       appBar: AppBar(title: const Text("Stock Market Search")),
@@ -22,13 +31,12 @@ class StocksHomeScreen extends HookConsumerWidget {
         child: Column(
           children: [
             TextField(
-              controller: _searchController,
               decoration: const InputDecoration(
                 labelText: "Search Stocks",
                 suffixIcon: Icon(Icons.search),
               ),
               onChanged: (value) {
-                stocksStateNotifier.fetchStocks(value);
+                search.value = value;
               },
             ),
             const SizedBox(height: 20),
@@ -42,17 +50,19 @@ class StocksHomeScreen extends HookConsumerWidget {
               ),
             );
               } else {
-                return ListView.builder(
-                  itemCount: data.length,
-                  itemBuilder: (context, index) {
-                    StocksResponse stock = data[index];
-                    return Padding(padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16), child: Text(stock.name ?? "Stock $index"),);
-                },);
+                return Expanded(
+                  child: ListView.builder(  
+                    itemCount: data.length,
+                    itemBuilder: (context, index) {
+                      StocksResponse stock = data[index];
+                      return Padding(padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16), child: Text(stock.name ?? "Stock $index"),);
+                  },),
+                );
               }
             }, error: (error, stackTrace) {
               return SizedBox.shrink();
             }, loading: () {
-              return Center(child: CircularProgressIndicator(),);
+              return Expanded(child: Center(child: CircularProgressIndicator(),));
             },)
             
           ],
