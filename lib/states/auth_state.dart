@@ -1,13 +1,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_stock_app/extensions/build_context_ext.dart';
-import 'package:flutter_stock_app/repository/core/error_model.dart';
 import 'package:flutter_stock_app/repository/core/repo_constants.dart';
 import 'package:flutter_stock_app/repository/core/service_utils.dart';
 import 'package:flutter_stock_app/repository/service/models/requests/auth/login_request.dart';
 import 'package:flutter_stock_app/repository/service/repo/auth_repo/auth_repo_service.dart';
 import 'package:flutter_stock_app/ui/stocks_home_screen.dart';
-import 'package:flutter_stock_app/utils/constants.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -45,11 +43,7 @@ class AuthStateNotifier extends _$AuthStateNotifier {
       },));
     }, onError: (error) {
       state = state.copyWith(isLogginIn: false);
-      String message = Constants.somethingWentWrong;
-      if(error is ErrorModel) {
-        message = error.error?.message ?? Constants.somethingWentWrong;
-      }
-      globalContext.showAlert(message);  
+       globalContext.showAlert(error);  
     },);
   }
 } 

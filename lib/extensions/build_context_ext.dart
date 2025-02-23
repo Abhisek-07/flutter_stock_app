@@ -8,7 +8,7 @@ extension BuildContextExt on BuildContext {
     ScaffoldMessenger.of(this)
             .showSnackBar(
           SnackBar(
-            content: Text(message),
+            content: Text(message, textAlign: TextAlign.center,),
           ),
         );
   }

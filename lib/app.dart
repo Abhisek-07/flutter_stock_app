@@ -19,7 +19,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       navigatorKey: rootNavigatorKey,
-      title: 'Flutter Demo',
+      title: 'Stocks',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),

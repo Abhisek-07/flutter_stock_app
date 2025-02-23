@@ -35,7 +35,7 @@ class StocksStateNotifier extends _$StocksStateNotifier {
     ServiceUtils.makeApiCall(apiCall: stockRepoService.searchStocks(query: query), onSuccess: (data) {
       state = state.copyWith(stockList: AsyncData(data));
     }, onError: (error) {
-      globalContext.showAlert(Constants.somethingWentWrong);
+      globalContext.showAlert(error);
       state = state.copyWith(stockList: AsyncData(previousStockList));
     },);
     }
