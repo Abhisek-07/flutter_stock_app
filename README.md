@@ -8,12 +8,6 @@ A Flutter application that allows users to search and view stock market informat
 - Search functionality for stocks
 - Display detailed stock information
 
-## Screenshots
-
-![Login Screen](screenshots/login_screen.png)
-![Stock Search](screenshots/stock_search.png)
-![Stock Details](screenshots/stock_details.png)
-
 ## Getting Started
 
 ### Prerequisites
