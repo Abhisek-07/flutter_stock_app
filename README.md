@@ -21,7 +21,7 @@ A Flutter application that allows users to search and view stock market informat
 - Flutter SDK: [Installation Guide](https://flutter.dev/docs/get-started/install)
 - Dart SDK
 
-### Installation
+### Running the App
 
 1. **Clone the repository:**
 
@@ -36,57 +36,17 @@ A Flutter application that allows users to search and view stock market informat
    flutter pub get
    ```
 
-3. **Generate necessary files:**
-
-   This project uses `retrofit` for API calls. Generate the necessary files using:
-
-   ```bash
-   flutter pub run build_runner build
-   ```
-
-4. **Run the application:**
+3. **Run the application:**
 
    ```bash
    flutter run
    ```
 
-## Dependencies
+## Overview
 
-- [flutter_riverpod](https://pub.dev/packages/flutter_riverpod): State management
-- [flutter_hooks](https://pub.dev/packages/flutter_hooks): Hooks for functional widgets
-- [dio](https://pub.dev/packages/dio): HTTP client
-- [retrofit](https://pub.dev/packages/retrofit): Type-safe HTTP client generator
-- [shared_preferences](https://pub.dev/packages/shared_preferences): Persistent storage
+This project is built using **Flutter Riverpod** for state management, **Flutter Hooks** for functional widgets, and **Dio with Retrofit** for API calls. It also includes a centralized **Service Utils** class for handling API responses and errors efficiently.
 
-## API Configuration
-
-The application interacts with a stock market API. Ensure you have the correct base URL and endpoints configured.
-
-1. **Set the Base URL:**
-
-   In your API service class, set the base URL for the API:
-
-   ```dart
-   @RestApi(baseUrl: "https://api.example.com/")
-   abstract class ApiService {
-     factory ApiService(Dio dio, {String baseUrl}) = _ApiService;
-
-     // Define your endpoints here
-   }
-   ```
-
-2. **Authentication:**
-
-   The app uses token-based authentication. Upon successful login, the token is stored using `shared_preferences` for persistent sessions. Ensure that the token is included in the headers for authenticated requests:
-
-   ```dart
-   Dio dio = Dio();
-   dio.options.headers["Authorization"] = "Bearer YOUR_TOKEN";
-   ```
-
-## Error Handling
-
-Centralized error handling is implemented using a service utility class. This class processes API responses and manages exceptions to provide a consistent error-handling mechanism across the app.
+For authentication, the app uses **SharedPreferences** to store and retrieve the authentication token, ensuring a persistent login session.
 
 ## Contributing
 
