@@ -3,7 +3,7 @@ class ServiceUtils {
   static Future<void> makeApiCall<T>({
     required Future<T> apiCall,
     required Function(T data) onSuccess,
-    required Function(String error) onError,
+    required Function(Object error) onError,
   }) async {
     try {
       // Make the API call
@@ -11,7 +11,7 @@ class ServiceUtils {
 
       onSuccess(response);
     }  catch (e) {
-      onError("Unexpected error: ${e.toString()}");
+      onError(e);
     }
   }
 }

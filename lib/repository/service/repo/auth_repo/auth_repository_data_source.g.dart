@@ -24,12 +24,13 @@ class _AuthRepositoryDataSource implements AuthRepositoryDataSource {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = request;
+    final _data = <String, dynamic>{};
+    _data.addAll(request.toJson());
     final _options = _setStreamType<LoginResponse>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/auth/local',
+            'api/auth/local',
             queryParameters: queryParameters,
             data: _data,
           )

@@ -6,9 +6,9 @@ part of 'stocks_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$StocksResponseImpl _$$StocksResponseImplFromJson(
+StocksResponse _$StocksResponseFromJson(
   Map<String, dynamic> json,
-) => _$StocksResponseImpl(
+) => StocksResponse(
   id: (json['id'] as num?)?.toInt(),
   name: json['name'] as String?,
   symbol: json['symbol'] as String?,
@@ -57,48 +57,47 @@ _$StocksResponseImpl _$$StocksResponseImplFromJson(
           : UpdatedBy.fromJson(json['updatedBy'] as Map<String, dynamic>),
 );
 
-Map<String, dynamic> _$$StocksResponseImplToJson(
-  _$StocksResponseImpl instance,
-) => <String, dynamic>{
-  'id': instance.id,
-  'name': instance.name,
-  'symbol': instance.symbol,
-  'createdAt': instance.createdAt,
-  'updatedAt': instance.updatedAt,
-  'alpaca_id': instance.alpacaId,
-  'exchange': instance.exchange,
-  'description': instance.description,
-  'asset_type': instance.assetType,
-  'isin': instance.isin,
-  'industry': instance.industry,
-  'sector': instance.sector,
-  'employees': instance.employees,
-  'website': instance.website,
-  'address': instance.address,
-  'net_zero_progress': instance.netZeroProgress,
-  'carbon_intensity_scope_3': instance.carbonIntensityScope3,
-  'carbon_intensity_scope_1_and_2': instance.carbonIntensityScope1And2,
-  'carbon_intensity_scope_1_and_2_and_3':
-      instance.carbonIntensityScope1And2And3,
-  'temp_alignment_scopes_1_and_2': instance.tempAlignmentScopes1And2,
-  'dnsh_assessment_pass': instance.dnshAssessmentPass,
-  'good_governance_assessment': instance.goodGovernanceAssessment,
-  'contribute_to_environment_or_social_objective':
-      instance.contributeToEnvironmentOrSocialObjective,
-  'sustainable_investment': instance.sustainableInvestment,
-  'scope_1_emissions': instance.scope1Emissions,
-  'scope_2_emissions': instance.scope2Emissions,
-  'scope_3_emissions': instance.scope3Emissions,
-  'total_emissions': instance.totalEmissions,
-  'listing_date': instance.listingDate?.toIso8601String(),
-  'market_cap': instance.marketCap,
-  'ibkr_connection_id': instance.ibkrConnectionId,
-  'image': instance.image,
-  'createdBy': instance.createdBy,
-  'updatedBy': instance.updatedBy,
-};
+Map<String, dynamic> _$StocksResponseToJson(StocksResponse instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'symbol': instance.symbol,
+      'createdAt': instance.createdAt,
+      'updatedAt': instance.updatedAt,
+      'alpaca_id': instance.alpacaId,
+      'exchange': instance.exchange,
+      'description': instance.description,
+      'asset_type': instance.assetType,
+      'isin': instance.isin,
+      'industry': instance.industry,
+      'sector': instance.sector,
+      'employees': instance.employees,
+      'website': instance.website,
+      'address': instance.address,
+      'net_zero_progress': instance.netZeroProgress,
+      'carbon_intensity_scope_3': instance.carbonIntensityScope3,
+      'carbon_intensity_scope_1_and_2': instance.carbonIntensityScope1And2,
+      'carbon_intensity_scope_1_and_2_and_3':
+          instance.carbonIntensityScope1And2And3,
+      'temp_alignment_scopes_1_and_2': instance.tempAlignmentScopes1And2,
+      'dnsh_assessment_pass': instance.dnshAssessmentPass,
+      'good_governance_assessment': instance.goodGovernanceAssessment,
+      'contribute_to_environment_or_social_objective':
+          instance.contributeToEnvironmentOrSocialObjective,
+      'sustainable_investment': instance.sustainableInvestment,
+      'scope_1_emissions': instance.scope1Emissions,
+      'scope_2_emissions': instance.scope2Emissions,
+      'scope_3_emissions': instance.scope3Emissions,
+      'total_emissions': instance.totalEmissions,
+      'listing_date': instance.listingDate?.toIso8601String(),
+      'market_cap': instance.marketCap,
+      'ibkr_connection_id': instance.ibkrConnectionId,
+      'image': instance.image,
+      'createdBy': instance.createdBy,
+      'updatedBy': instance.updatedBy,
+    };
 
-_$ImageImpl _$$ImageImplFromJson(Map<String, dynamic> json) => _$ImageImpl(
+Image _$ImageFromJson(Map<String, dynamic> json) => Image(
   id: (json['id'] as num?)?.toInt(),
   name: json['name'] as String?,
   alternativeText: json['alternativeText'],
@@ -122,97 +121,92 @@ _$ImageImpl _$$ImageImplFromJson(Map<String, dynamic> json) => _$ImageImpl(
   updatedAt: json['updatedAt'] as String?,
 );
 
-Map<String, dynamic> _$$ImageImplToJson(_$ImageImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'alternativeText': instance.alternativeText,
-      'caption': instance.caption,
-      'width': instance.width,
-      'height': instance.height,
-      'formats': instance.formats,
-      'hash': instance.hash,
-      'ext': instance.ext,
-      'mime': instance.mime,
-      'size': instance.size,
-      'url': instance.url,
-      'previewUrl': instance.previewUrl,
-      'provider': instance.provider,
-      'provider_metadata': instance.providerMetadata,
-      'folderPath': instance.folderPath,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
-    };
+Map<String, dynamic> _$ImageToJson(Image instance) => <String, dynamic>{
+  'id': instance.id,
+  'name': instance.name,
+  'alternativeText': instance.alternativeText,
+  'caption': instance.caption,
+  'width': instance.width,
+  'height': instance.height,
+  'formats': instance.formats,
+  'hash': instance.hash,
+  'ext': instance.ext,
+  'mime': instance.mime,
+  'size': instance.size,
+  'url': instance.url,
+  'previewUrl': instance.previewUrl,
+  'provider': instance.provider,
+  'provider_metadata': instance.providerMetadata,
+  'folderPath': instance.folderPath,
+  'createdAt': instance.createdAt,
+  'updatedAt': instance.updatedAt,
+};
 
-_$FormatsImpl _$$FormatsImplFromJson(Map<String, dynamic> json) =>
-    _$FormatsImpl(
-      thumbnail:
-          json['thumbnail'] == null
-              ? null
-              : Thumbnail.fromJson(json['thumbnail'] as Map<String, dynamic>),
-    );
+Formats _$FormatsFromJson(Map<String, dynamic> json) => Formats(
+  thumbnail:
+      json['thumbnail'] == null
+          ? null
+          : Thumbnail.fromJson(json['thumbnail'] as Map<String, dynamic>),
+);
 
-Map<String, dynamic> _$$FormatsImplToJson(_$FormatsImpl instance) =>
-    <String, dynamic>{'thumbnail': instance.thumbnail};
+Map<String, dynamic> _$FormatsToJson(Formats instance) => <String, dynamic>{
+  'thumbnail': instance.thumbnail,
+};
 
-_$ThumbnailImpl _$$ThumbnailImplFromJson(Map<String, dynamic> json) =>
-    _$ThumbnailImpl(
-      ext: json['ext'] as String?,
-      url: json['url'] as String?,
-      hash: json['hash'] as String?,
-      mime: json['mime'] as String?,
-      name: json['name'] as String?,
-      path: json['path'],
-      size: (json['size'] as num?)?.toDouble(),
-      width: (json['width'] as num?)?.toInt(),
-      height: (json['height'] as num?)?.toInt(),
-      sizeInBytes: (json['sizeInBytes'] as num?)?.toInt(),
-    );
+Thumbnail _$ThumbnailFromJson(Map<String, dynamic> json) => Thumbnail(
+  ext: json['ext'] as String?,
+  url: json['url'] as String?,
+  hash: json['hash'] as String?,
+  mime: json['mime'] as String?,
+  name: json['name'] as String?,
+  path: json['path'],
+  size: (json['size'] as num?)?.toDouble(),
+  width: (json['width'] as num?)?.toInt(),
+  height: (json['height'] as num?)?.toInt(),
+  sizeInBytes: (json['sizeInBytes'] as num?)?.toInt(),
+);
 
-Map<String, dynamic> _$$ThumbnailImplToJson(_$ThumbnailImpl instance) =>
-    <String, dynamic>{
-      'ext': instance.ext,
-      'url': instance.url,
-      'hash': instance.hash,
-      'mime': instance.mime,
-      'name': instance.name,
-      'path': instance.path,
-      'size': instance.size,
-      'width': instance.width,
-      'height': instance.height,
-      'sizeInBytes': instance.sizeInBytes,
-    };
+Map<String, dynamic> _$ThumbnailToJson(Thumbnail instance) => <String, dynamic>{
+  'ext': instance.ext,
+  'url': instance.url,
+  'hash': instance.hash,
+  'mime': instance.mime,
+  'name': instance.name,
+  'path': instance.path,
+  'size': instance.size,
+  'width': instance.width,
+  'height': instance.height,
+  'sizeInBytes': instance.sizeInBytes,
+};
 
-_$UpdatedByImpl _$$UpdatedByImplFromJson(Map<String, dynamic> json) =>
-    _$UpdatedByImpl(
-      id: (json['id'] as num?)?.toInt(),
-      firstname: json['firstname'] as String?,
-      lastname: json['lastname'] as String?,
-      username: json['username'],
-      email: json['email'] as String?,
-      password: json['password'] as String?,
-      resetPasswordToken: json['resetPasswordToken'],
-      registrationToken: json['registrationToken'],
-      isActive: json['isActive'] as bool?,
-      blocked: json['blocked'] as bool?,
-      preferedLanguage: json['preferedLanguage'],
-      createdAt: json['createdAt'] as String?,
-      updatedAt: json['updatedAt'] as String?,
-    );
+UpdatedBy _$UpdatedByFromJson(Map<String, dynamic> json) => UpdatedBy(
+  id: (json['id'] as num?)?.toInt(),
+  firstname: json['firstname'] as String?,
+  lastname: json['lastname'] as String?,
+  username: json['username'],
+  email: json['email'] as String?,
+  password: json['password'] as String?,
+  resetPasswordToken: json['resetPasswordToken'],
+  registrationToken: json['registrationToken'],
+  isActive: json['isActive'] as bool?,
+  blocked: json['blocked'] as bool?,
+  preferedLanguage: json['preferedLanguage'],
+  createdAt: json['createdAt'] as String?,
+  updatedAt: json['updatedAt'] as String?,
+);
 
-Map<String, dynamic> _$$UpdatedByImplToJson(_$UpdatedByImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'firstname': instance.firstname,
-      'lastname': instance.lastname,
-      'username': instance.username,
-      'email': instance.email,
-      'password': instance.password,
-      'resetPasswordToken': instance.resetPasswordToken,
-      'registrationToken': instance.registrationToken,
-      'isActive': instance.isActive,
-      'blocked': instance.blocked,
-      'preferedLanguage': instance.preferedLanguage,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
-    };
+Map<String, dynamic> _$UpdatedByToJson(UpdatedBy instance) => <String, dynamic>{
+  'id': instance.id,
+  'firstname': instance.firstname,
+  'lastname': instance.lastname,
+  'username': instance.username,
+  'email': instance.email,
+  'password': instance.password,
+  'resetPasswordToken': instance.resetPasswordToken,
+  'registrationToken': instance.registrationToken,
+  'isActive': instance.isActive,
+  'blocked': instance.blocked,
+  'preferedLanguage': instance.preferedLanguage,
+  'createdAt': instance.createdAt,
+  'updatedAt': instance.updatedAt,
+};

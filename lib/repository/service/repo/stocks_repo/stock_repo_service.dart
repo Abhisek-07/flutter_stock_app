@@ -5,7 +5,7 @@ import 'package:flutter_stock_app/repository/service/repo/stocks_repo/stocks_rep
 class StockRepoService {
   final StocksRepositoryDataSource stocksRepositoryDataSource;
 
-  StockRepoService() : stocksRepositoryDataSource = StocksRepositoryDataSource(DioClient.dio);
+  StockRepoService() : stocksRepositoryDataSource = StocksRepositoryDataSource(DioClient().dio);
 
   Future<List<StocksResponse>> searchStocks({required String query}) {
     return stocksRepositoryDataSource.searchStocks(query: query);

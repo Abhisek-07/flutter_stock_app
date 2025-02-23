@@ -6,7 +6,7 @@ import 'package:flutter_stock_app/repository/service/repo/auth_repo/auth_reposit
 class AuthRepoService {
   final AuthRepositoryDataSource authRepositoryDataSource;
 
-  AuthRepoService() : authRepositoryDataSource = AuthRepositoryDataSource(DioClient.dio);
+  AuthRepoService() : authRepositoryDataSource = AuthRepositoryDataSource(DioClient().dio);
 
   Future<LoginResponse> login({required LoginRequest request}) {
     return authRepositoryDataSource.login(request: request);

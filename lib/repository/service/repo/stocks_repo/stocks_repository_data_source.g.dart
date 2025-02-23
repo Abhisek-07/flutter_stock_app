@@ -29,7 +29,7 @@ class _StocksRepositoryDataSource implements StocksRepositoryDataSource {
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/stocks/search',
+            'api/stocks/search',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -62,7 +62,7 @@ class _StocksRepositoryDataSource implements StocksRepositoryDataSource {
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/stocks/${id}',
+            'api/stocks/${id}',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -87,7 +87,7 @@ class _StocksRepositoryDataSource implements StocksRepositoryDataSource {
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/stocks/${id}/price-graph',
+            'api/stocks/${id}/price-graph',
             queryParameters: queryParameters,
             data: _data,
           )
